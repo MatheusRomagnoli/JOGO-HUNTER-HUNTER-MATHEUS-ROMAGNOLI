@@ -32,6 +32,7 @@ while rodando == True:
     
     #adiciona o fundo a janela do jogo
     tela.blit(FUNDO,(0,0))
+    
     #define posição do gon na tela
     tela.blit(gon,(gon_posx,gon_posy))
     
