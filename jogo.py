@@ -83,6 +83,10 @@ while rodando == True:
             pontuacao = pontuacao - 1
             texto_pontos = fonte.render(f"Pontuação do GON: {pontuacao}",True,(255,255,255))
             objeto.pos_y = 1
+    #tela de GAME OVER
+    if pontuacao == 0:
+        tela.fill((0, 255, 0))
+
     #atualiza o texto
     tela.blit(texto_pontos,(5,10))
     
