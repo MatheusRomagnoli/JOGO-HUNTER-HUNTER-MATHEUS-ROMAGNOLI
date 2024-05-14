@@ -11,7 +11,8 @@ pygame.display.set_caption("Jogo Hunter x Hunter MATHEUS ROMAGNOLI")
 gon = pygame.image.load("imagens/gon1.png")
 killua = pygame.image.load("imagens/killua1.png")
 gon_e_killua = gon = pygame.image.load("imagens/gonkillua.png")
-
+gon = pygame.transform.scale(gon,(80,80))
+killua = pygame.transform.scale(killua,(80,80))
 
 #fazendo a tela funcionar
 rodando = True
