@@ -29,12 +29,13 @@ killua_posy = 1
 FUNDO = pygame.image.load("imagens/fundo.jpg")
 FUNDO = pygame.transform.scale(FUNDO,(800,500))
 
-#lista de objetos
-lista_objetos = [Objeto("imagens/baralho.png", 100,50,420,1),
+#lista de objetos bons
+lista_objetos1 = [Objeto("imagens/vara.png", 100,50,380,1),
+                 Objeto("imagens/anel.png", 100,50,110,1)]
+#lista objetos ruins
+lista_objetos2 = [Objeto("imagens/baralho.png", 100,50,420,1),
                  Objeto("imagens/aranha.png", 100,50,270,1),
-                 Objeto("imagens/vara.png", 100,50,380,1),
-                 Objeto("imagens/anel.png", 100,50,110,1),
-                 Objeto("imagens/cartao.png", 100,50,590,1),]
+                 Objeto("imagens/cartao.png", 100,50,590,1)]
 
 #configura o fps
 clock = pygame.time.Clock()
@@ -63,12 +64,18 @@ while rodando == True:
     #define posição do killua na tela
     tela.blit(killua,(killua_posx,killua_posy))
 
-    #configurando os objetos
-    for objeto in lista_objetos:
+    #configurando os objetos bons
+    for objeto in lista_objetos1:
         objeto.apareca(tela)
         objeto.movimenta()
         if mascara.overlap(objeto.mascara,(objeto.pos_x - gon_posx, objeto.pos_y - gon_posy)):
-            pontuacao = pontuacao -1
+            pontuacao = pontuacao + 1
+    #configurando os objetos ruins
+    for objeto in lista_objetos2:
+        objeto.apareca(tela)
+        objeto.movimenta()
+        if mascara.overlap(objeto.mascara,(objeto.pos_x - gon_posx, objeto.pos_y - gon_posy)):
+            pontuacao = pontuacao - 1
     #atualiza a tela
     pygame.display.update()
     
