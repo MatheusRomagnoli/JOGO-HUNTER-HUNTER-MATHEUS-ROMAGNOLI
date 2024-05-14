@@ -11,13 +11,13 @@ pygame.display.set_caption("Jogo Hunter x Hunter MATHEUS ROMAGNOLI")
 gon = pygame.image.load("imagens/gon1.png")
 killua = pygame.image.load("imagens/killua1.png")
 gon_e_killua = pygame.image.load("imagens/gonkillua.png")
-gon = pygame.transform.scale(gon,(80,80))
-killua = pygame.transform.scale(killua,(80,80))
+gon = pygame.transform.scale(gon,(80,110))
+killua = pygame.transform.scale(killua,(80,110))
 
 #posição inicial do GON
 #posical inicial do GON
-gon_posx = 375
-gon_posy = 430
+gon_posx = 350
+gon_posy = 390
 
 #imagem de fundo
 FUNDO = pygame.image.load("imagens/fundo.jpg")
