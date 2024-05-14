@@ -36,6 +36,9 @@ lista_objetos = [Objeto("imagens/baralho.png", 100,50,950,50),
                  Objeto("imagens/anel.png", 100,50,950,50),
                  Objeto("imagens/cartao.png", 100,50,950,50),]
 
+#configura o fps
+clock = pygame.time.Clock()
+
 #fazendo a tela funcionar
 rodando = True
 while rodando == True:
@@ -46,6 +49,12 @@ while rodando == True:
     #adiciona o fundo a janela do jogo
     tela.blit(FUNDO,(0,0))
     
+    teclas = pygame.key.get_pressed()
+    if teclas[pygame.K_RIGHT]:
+        gon_posx = gon_posx + 5
+    if teclas[pygame.K_LEFT]:
+        gon_posx = gon_posx - 5
+
     #define posição do gon na tela
     tela.blit(gon,(gon_posx,gon_posy))
     #define posição do killua na tela
@@ -53,3 +62,6 @@ while rodando == True:
 
     #atualiza a tela
     pygame.display.update()
+    
+    #fps
+    clock.tick(60)
