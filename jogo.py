@@ -5,7 +5,7 @@ import pygame
 #cria a janela do jogo
 pygame.init()
 tela = pygame.display.set_mode((800,500))
-pygame.display.set_caption("Jogo muito difícil mesmo da MATHEUS ROMAGNOLI")
+pygame.display.set_caption("Jogo Hunter x Hunter MATHEUS ROMAGNOLI")
 
 #carregando as imagens
 gon = pygame.image.load("imagens/gon1.png")
