@@ -14,6 +14,11 @@ gon_e_killua = gon = pygame.image.load("imagens/gonkillua.png")
 gon = pygame.transform.scale(gon,(80,80))
 killua = pygame.transform.scale(killua,(80,80))
 
+#posição inicial do GON
+#posical inicial do GON
+gon_posx = 375
+gon_posy = 430
+
 #imagem de fundo
 FUNDO = pygame.image.load("imagens/fundo.jpg")
 FUNDO = pygame.transform.scale(FUNDO,(800,500))
@@ -27,7 +32,8 @@ while rodando == True:
     
     #adiciona o fundo a janela do jogo
     tela.blit(FUNDO,(0,0))
-    
+    #define posição do gon na tela
+    tela.blit(gon,(gon_posx,gon_posy))
     
     #atualiza a tela
     pygame.display.update()
