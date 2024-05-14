@@ -1,6 +1,7 @@
 #Feito por matheus othavio romagnoli
 
 import pygame
+from objeto import *
 
 #cria a janela do jogo
 pygame.init()
@@ -18,6 +19,7 @@ killua = pygame.transform.scale(killua,(80,110))
 #posical inicial do GON
 gon_posx = 350
 gon_posy = 390
+mascara = pygame.mask.from_surface(gon)
 
 #posição inicial do KILLUA
 killua_posx = 350
@@ -26,6 +28,13 @@ killua_posy = 1
 #imagem de fundo
 FUNDO = pygame.image.load("imagens/fundo.jpg")
 FUNDO = pygame.transform.scale(FUNDO,(800,500))
+
+#lista de objetos
+lista_objetos = [Objeto("imagens/baralho.png", 100,50,950,50),
+                 Objeto("imagens/aranha.png", 100,50,950,50),
+                 Objeto("imagens/vara.png", 100,50,950,50),
+                 Objeto("imagens/anel.png", 100,50,950,50),
+                 Objeto("imagens/cartao.png", 100,50,950,50),]
 
 #fazendo a tela funcionar
 rodando = True
