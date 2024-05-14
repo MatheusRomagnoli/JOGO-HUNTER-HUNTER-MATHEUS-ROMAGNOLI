@@ -40,8 +40,11 @@ lista_objetos2 = [Objeto("imagens/baralho.png", 100,50,420,1),
 #configura o fps
 clock = pygame.time.Clock()
 
+#criando a fonte
+fonte = pygame.font.SysFont("Arial Black", 18)
 #pontuação
 pontuacao = 10
+texto_pontos = fonte.render(f"Pontuação do GON: {pontuacao}",True,(255,255,255))
 
 #fazendo a tela funcionar
 rodando = True
@@ -70,12 +73,19 @@ while rodando == True:
         objeto.movimenta()
         if mascara.overlap(objeto.mascara,(objeto.pos_x - gon_posx, objeto.pos_y - gon_posy)):
             pontuacao = pontuacao + 1
+            texto_pontos = fonte.render(f"Pontuação do GON: {pontuacao}",True,(255,255,255))
+            objeto.pos_y = 1
     #configurando os objetos ruins
     for objeto in lista_objetos2:
         objeto.apareca(tela)
         objeto.movimenta()
         if mascara.overlap(objeto.mascara,(objeto.pos_x - gon_posx, objeto.pos_y - gon_posy)):
             pontuacao = pontuacao - 1
+            texto_pontos = fonte.render(f"Pontuação do GON: {pontuacao}",True,(255,255,255))
+            objeto.pos_y = 1
+    #atualiza o texto
+    tela.blit(texto_pontos,(5,10))
+    
     #atualiza a tela
     pygame.display.update()
     
