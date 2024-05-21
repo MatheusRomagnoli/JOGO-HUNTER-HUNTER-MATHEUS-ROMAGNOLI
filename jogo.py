@@ -48,11 +48,10 @@ texto_pontos = fonte.render(f"Pontuação do GON: {pontuacao}",True,(255,255,255
 perdi = True
 textoover = fonte.render("Game Over",True,(255,255,255))
 textovence = fonte.render("Você Venceu!!",True,(255,255,255))
-textoespecial = fonte.render(f"Você ativou a habilidade especial de VELOCIDADE",True,(255,255,255))
+textoespecial = fonte.render(f"Aperte espaço para ativar a habilidade especial de VELOCIDADE",True,(255,255,255))
 
 velkillua = 10
 velgon = 5
-poder = False
 
 #fazendo a tela funcionar
 rodando = True
@@ -64,12 +63,8 @@ while rodando == True:
         if evento.type == pygame.KEYDOWN:
             if evento.key == pygame.K_SPACE:
                 velgon = velgon + 10
-                poder = True
-                if poder == True:
-                    textoespecial = fonte.render(f"Você ativou a habilidade especial de VELOCIDADE",True,(255,255,255))
-                    tela.blit(textoespecial,(5,30))
-
-
+    
+    #POSIÇÃO DO GON BLOQUEIO DA BORDA
     if gon_posx > 730:
         gon_posx = 730
     if gon_posx < 1:
@@ -110,6 +105,8 @@ while rodando == True:
             objeto.pos_y = 1
             objeto.pos_x = random.randint(1,700)
     
+    #atualiza o texto de especial
+    tela.blit(textoespecial,(5,30))
     #atualiza o texto de pontos
     tela.blit(texto_pontos,(5,10))
     
