@@ -2,7 +2,6 @@
 
 import pygame
 from objeto import *
-from time import sleep
 
 #cria a janela do jogo
 pygame.init()
@@ -46,6 +45,9 @@ fonte = pygame.font.SysFont("Arial Black", 18)
 #pontuação
 pontuacao = 10
 texto_pontos = fonte.render(f"Pontuação do GON: {pontuacao}",True,(255,255,255))
+perdi = True
+textoover = fonte.render("Game Over",True,(255,255,255))
+textovence = fonte.render("Você Venceu!!",True,(255,255,255))
 
 #fazendo a tela funcionar
 rodando = True
@@ -76,6 +78,7 @@ while rodando == True:
             pontuacao = pontuacao + 1
             texto_pontos = fonte.render(f"Pontuação do GON: {pontuacao}",True,(255,255,255))
             objeto.pos_y = 1
+            objeto.pos_x = random.randint(1,700)
     #configurando os objetos ruins
     for objeto in lista_objetos2:
         objeto.apareca(tela)
@@ -84,13 +87,20 @@ while rodando == True:
             pontuacao = pontuacao - 1
             texto_pontos = fonte.render(f"Pontuação do GON: {pontuacao}",True,(255,255,255))
             objeto.pos_y = 1
+            objeto.pos_x = random.randint(1,700)
     #tela de GAME OVER
     if pontuacao <= 0:
         tela.fill((0, 255, 0))
-        texto_pontos = fonte.render("Game Over",True,(255,255,255))
-    #atualiza o texto
+        textoover = fonte.render("Game Over",True,(255,255,255))
+        tela.blit(textoover,(320,270))
+    #tela de VOCÊ VENCEU
+    if pontuacao > 20:
+        tela.fill((0, 255, 0))
+        textovence = fonte.render("Você Venceu!!",True,(255,255,255))
+        tela.blit(textovence,(320,270))
+    #atualiza o texto de pontos
     tela.blit(texto_pontos,(5,10))
-    
+
     #atualiza a tela
     pygame.display.update()
     

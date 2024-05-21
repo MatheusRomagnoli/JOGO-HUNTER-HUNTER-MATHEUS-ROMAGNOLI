@@ -11,7 +11,7 @@ class Objeto:
         
         self.imagem = pygame.transform.scale(self.imagem,(self.largura,self.altura))
         
-        self.pos_x = x_inicial
+        self.pos_x = random.randint(1,700)
         self.pos_y = y_inicial
 
         self.velocidade = random.randint(1,10)
@@ -24,3 +24,4 @@ class Objeto:
         if self.pos_y > 900:
             self.pos_y = 1
             self.velocidade - random.randint(5,10)
+            self.pos_x = random.randint(1,700)
