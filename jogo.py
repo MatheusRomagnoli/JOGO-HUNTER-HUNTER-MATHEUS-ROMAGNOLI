@@ -49,6 +49,8 @@ perdi = True
 textoover = fonte.render("Game Over",True,(255,255,255))
 textovence = fonte.render("Você Venceu!!",True,(255,255,255))
 
+velkillua = 10
+
 #fazendo a tela funcionar
 rodando = True
 while rodando == True:
@@ -68,6 +70,9 @@ while rodando == True:
     #define posição do gon na tela
     tela.blit(gon,(gon_posx,gon_posy))
     #define posição do killua na tela
+    killua_posx += velkillua
+    if killua_posx < 0 or killua_posx > 800:
+        velkillua = velkillua * -1
     tela.blit(killua,(killua_posx,killua_posy))
 
     #configurando os objetos bons
