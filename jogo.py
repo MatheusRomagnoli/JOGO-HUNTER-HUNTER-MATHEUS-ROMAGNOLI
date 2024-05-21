@@ -53,12 +53,14 @@ textoespecial = fonte.render(f"Você ativou a habilidade especial de VELOCIDADE"
 velkillua = 10
 velgon = 5
 poder = False
+
 #fazendo a tela funcionar
 rodando = True
 while rodando == True:
     for evento in pygame.event.get():
         if evento.type == pygame.QUIT:
             rodando = False
+        #PODER ESPECIAL ESPAÇO
         if evento.type == pygame.KEYDOWN:
             if evento.key == pygame.K_SPACE:
                 velgon = velgon + 10
