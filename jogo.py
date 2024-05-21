@@ -69,6 +69,11 @@ while rodando == True:
                     textoespecial = fonte.render(f"Você ativou a habilidade especial de VELOCIDADE",True,(255,255,255))
                     tela.blit(textoespecial,(5,30))
 
+
+    if gon_posx > 730:
+        gon_posx = 730
+    if gon_posx < 1:
+        gon_posx = 3
     #adiciona o fundo a janela do jogo
     tela.blit(FUNDO,(0,0))
     
