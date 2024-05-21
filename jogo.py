@@ -2,6 +2,7 @@
 
 import pygame
 from objeto import *
+from time import sleep
 
 #cria a janela do jogo
 pygame.init()
@@ -84,9 +85,9 @@ while rodando == True:
             texto_pontos = fonte.render(f"Pontuação do GON: {pontuacao}",True,(255,255,255))
             objeto.pos_y = 1
     #tela de GAME OVER
-    if pontuacao == 0:
+    if pontuacao <= 0:
         tela.fill((0, 255, 0))
-
+        texto_pontos = fonte.render("Game Over",True,(255,255,255))
     #atualiza o texto
     tela.blit(texto_pontos,(5,10))
     
